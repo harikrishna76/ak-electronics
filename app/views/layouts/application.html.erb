@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AkElectronics</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <!--******************** Meta Data ************************-->
+    <%= display_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <!--******************* Stylesheets ***********************-->
+    <%= stylesheet_link_tag "application", params[:controller], :media => "all" %>
+    <!--******************* JavaScript ***********************-->
+    <%= javascript_include_tag "application", params[:controller] %>
+  </head>
+  <body>
+    <!-- ********************** Header *********************** -->
+    <%= render '/layouts/header' %>
+    <!-- ******************** Main Content ******************* -->
+    <%= yield %>
+    <!-- ********************** Footer *********************** -->
+    <!-- <%= render '/layouts/footer' %> -->
+  </body>
 </html>
