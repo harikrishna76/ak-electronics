@@ -1,4 +1,5 @@
-<nav class="navbar navbar-fixed" style="background:rgb(38, 166, 154);color:white;border:none;border-radius:0">
+<nav class="navbar navbar-default navbar-fixed-top animated fadeInDown"
+  style="background:rgba(0,0,0,0.4);color:white;border:none;border-radius:0;margin:0">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,24 +9,56 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
+    <div class="col-md-3">
+      <a class="navbar-brand text-white"  style="font-size:25px" href="/">AK Electronics</a>
+    </div>
+    <div class="col-md-9">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown"
+              role="button" aria-haspopup="true" aria-expanded="false" style="background:">
+                Services
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu animated slideInRight">
+              <% @appliances.each do |appliance| %>
+              <li><a href="#" ><%= appliance.name %> Repair</a></li>
+              <% end %>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Applinces we serve</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown"
+              role="button" aria-haspopup="true" aria-expanded="false">
+              Brands<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu animated slideInRight">
+              <% @brands.each do |brand| %>
+              <li><a href="#" ><%= brand.name %></a></li>
+              <% end %>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Brands we serve</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown"
+              role="button" aria-haspopup="true" aria-expanded="false">
+              Locations<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu animated slideInLeft">
+              <% @locations.each do |location| %>
+              <li><a href="#" ><%= location.name %></a></li>
+              <% end %>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Locations we serve</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
   </div><!-- /.container-fluid -->
 </nav>

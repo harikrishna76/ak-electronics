@@ -1,5 +1,67 @@
-<div class="row" id="home-cover">
+<section class="row cover" id="home-cover" style="">
   <div class="col">
 
   </div>
-</div>
+  <div class="cover-overlay">
+
+  </div>
+</section>
+
+<section class="row home-section" id="appliances-section">
+    <div class="container">
+      <h2 class="text-center heading wow bounceInDown" data-wow-duration="2s">Know our seamless services</h2>
+      <h4 class="text-center caption wow bounceInDown" data-wow-duration="2s">Following are the services we provide</h4>
+      <div class="col-md-12 section-block">
+        <% @appliances.each do |appliance| %>
+          <div class="col-md-4 wow bounceInUp" data-wow-duration="2s">
+            <div class="card card-btm-line shadow-depth-1">
+              <img class="card-img-top" src="/assets/appliances/<%= appliance.name.downcase %>.jpg"
+                alt="Card image cap" width="100%" height="150px">
+              <div class="card-block">
+                <h4 class="card-title"><%= appliance.name %> Repair & Service</h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</section>
+
+<section class="row home-section cover" id="brands-section">
+    <div class="container">
+      <h2 class="text-center heading wow bounceInLeft" data-wow-duration="2s">Brands we Serve</h2>
+      <h4 class="text-center caption wow bounceInLeft" data-wow-duration="2s">Following are the brands we provide service for</h4>
+      <div class="col-md-12 section-block">
+        <% @brands.each do |brand| %>
+          <div class="col-md-3 wow bounceInLeft" data-wow-duration="2s">
+            <div class="card card-btm-line shadow-depth-5">
+              <img class="card-img-top" src="/assets/appliances/refrigerator.jpg"
+                alt="Card image cap" width="100%" height="100px">
+              <div class="card-block">
+                <h4 class="card-title"><%= brand.name %></h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="cover-overlay"></div>
+</section>
+
+<section class="row home-section" id="locations-section">
+    <div class="container">
+      <h2 class="text-center heading wow bounceInDown" data-wow-duration="2s">Areas we provide service</h2>
+      <h4 class="text-center caption wow bounceInDown" data-wow-duration="2s">Following are the servicible areas</h4>
+      <div class="col-md-12 section-block">
+        <% @locations.each do |location| %>
+          <div class="col-md-3 wow bounceInUp" data-wow-duration="2s">
+            <div class="card card-top-line shadow-depth-1">
+              <div class="card-block">
+                <h4 class="card-title"><%= location.name %></h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</section>

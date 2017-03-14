@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :prepare_meta_tags
+  before_action :prepare_meta_tags, :get_default_values
 
   def prepare_meta_tags(options={})
     site_name   = "AK Electronics"
@@ -41,4 +41,11 @@ class ApplicationController < ActionController::Base
 
     set_meta_tags options
   end
+
+  def get_default_values
+    @appliances = Appliance.all
+    @brands = Brand.all
+    @locations = Location.all
+  end
+
 end

@@ -1,8 +1,87 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables"
+@import "variables";
 
 #home-cover{
+  background: url(/assets/appliances.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
+.home-section{
+  .heading{
+    margin-top: 50px;
+    color: $primary;
+    text-decoration: underline;
+    text-transform: capitalize;
+  }
+  .caption{
+    margin-top: 15px;
+    color: #333
+  }
+  .section-block{
+    margin-top: 30px;
+    overflow: hidden;
+  }
+}
+
+.card{
+  margin-bottom: 30px
+}
+
+.card-btm-line{
+  border-bottom: 2px solid $primary;
+}
+
+.card-top-line{
+  border-top: 2px solid $primary;
+}
+
+.card-block{
+  padding:0px 10px;
+  text-align: center;
+}
+
+#appliances-section{
+  .card-block{
+    border-top: 2px solid $primary;
+  }
+}
+
+#brands-section{
+  background: url(/assets/brands_section.png) center center fixed;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  .card{
+    background: white;
+  }
+  .heading{
+    color: white;
+  }
+  .caption{
+    margin-top: 15px;
+    color: white
+  }
+  .section-block{
+    margin-top: 30px;
+  }
+  .container{
+    z-index: 2;
+    position: relative;
+  }
+  .cover-overlay{
+      background: rgba(0, 0, 0, 0.85);
+  }
+  .card-btm-line{
+    border-bottom: 2px solid $primary;
+  }
+}
+
+#locations-section{
+  .card-block{
+    padding-bottom: 5px
+  }
 }
