@@ -14,8 +14,10 @@
     <!-- ********************** Header *********************** -->
     <%= render '/layouts/header' %>
     <!-- ******************** Main Content ******************* -->
-    <%= yield %>
+    <div style="overflow-x:hidden !important;">
+      <%= yield %>
+    </div>
     <!-- ********************** Footer *********************** -->
-    <!-- <%= render '/layouts/footer' %> -->
+    <%= render '/layouts/footer' %>
   </body>
 </html>
