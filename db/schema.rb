@@ -20,13 +20,10 @@ ActiveRecord::Schema.define(version: 20170306201120) do
   end
 
   create_table "brands", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.integer  "appliance_id", limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
-
-  add_index "brands", ["appliance_id"], name: "fk_rails_11e927dcf2", using: :btree
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -43,6 +40,5 @@ ActiveRecord::Schema.define(version: 20170306201120) do
 
   add_index "locations", ["city_id"], name: "fk_rails_6c1a48c78d", using: :btree
 
-  add_foreign_key "brands", "appliances"
   add_foreign_key "locations", "cities"
 end
