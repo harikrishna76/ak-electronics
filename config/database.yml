@@ -25,7 +25,10 @@ development:
 #   database: db/test.sqlite3
 #
 production:
+  adapter: postgresql
   encoding: utf8
   pool: 15
+  host: localhost
+  database: ak_electronics
   # username: root
   # password: tazzo
